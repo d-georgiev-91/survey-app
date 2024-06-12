@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :surveys, only: :index
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount Sidekiq::Web => '/sidekiq'
 
@@ -9,5 +11,5 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'surveys#index'
 end
