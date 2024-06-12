@@ -9,4 +9,8 @@ html
     = stylesheet_link_tag 'application'
     = javascript_importmap_tags
   body
-    = yield
+    = render 'layouts/header'
+
+    .container
+      = display_flash_messages
+      = yield

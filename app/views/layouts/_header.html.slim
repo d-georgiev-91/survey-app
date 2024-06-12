@@ -1,0 +1,8 @@
+- if user_signed_in?
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      = link_to 'Home', root_path, class: 'navbar-brand'
+
+      = form_with(url: destroy_user_session_path, method: :delete) do
+        = submit_tag 'Logout', class: 'btn btn-primary'
+

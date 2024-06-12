@@ -3,6 +3,7 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   resources :surveys, only: :index
 
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   mount Sidekiq::Web => '/sidekiq'
 

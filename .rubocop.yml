@@ -13,3 +13,11 @@ Metrics/BlockLength:
   Exclude:
     - db/schema.rb
     - config/**/*
+
+Rails/Output:
+  Exclude:
+    - db/seeds.rb
+
+Layout/LineLength:
+  Exclude:
+    - config/initializers/devise.rb
