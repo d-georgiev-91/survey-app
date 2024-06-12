@@ -4,6 +4,7 @@ ruby '3.3.1'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
+gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'mysql2', '~> 0.5'
@@ -11,6 +12,7 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 gem 'redis', '>= 4.0.1'
 gem 'sidekiq'
+gem 'simple_form'
 gem 'slim-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -22,8 +24,8 @@ end
 
 group :development do
   gem 'rubocop'
-  gem 'rubocop-rails'
   gem 'rubocop-capybara'
+  gem 'rubocop-rails'
   gem 'web-console'
 end
 
