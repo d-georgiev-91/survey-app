@@ -3,10 +3,13 @@ source 'https://rubygems.org'
 ruby '3.3.1'
 
 gem 'bootsnap', require: false
+gem 'cocoon'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jquery-rails'
+gem 'local_time'
 gem 'mysql2', '~> 0.5'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'

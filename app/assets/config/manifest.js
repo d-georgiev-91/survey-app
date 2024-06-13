@@ -2,3 +2,8 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 //= link_tree ../builds
+//= link jquery.js
+//= link jquery_ujs.js
+//= link cocoon.js
+//= link bootstrap.min.js
+//= link local-time.es2017-esm.js

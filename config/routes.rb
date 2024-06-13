@@ -1,6 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  authenticate :user, ->(u) { u.admin? } do
+    namespace :admin do
+      resources :surveys
+    end
+
+    root to: 'admin/surveys#index', as: :authenticated_admin_root
+  end
+
   resources :surveys, only: :index
 
   devise_for :users, controllers: { sessions: 'users/sessions' }

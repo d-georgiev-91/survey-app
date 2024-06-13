@@ -1,0 +1,16 @@
+h2.mt-4.mb-3.text-center = "#{@state.titlecase} Surveys"
+
+.text-center.mb-4
+  - if @state == 'active'
+    h5 = link_to 'View Inactive Surveys', admin_surveys_path(state: 'inactive'), class: 'btn btn-secondary'
+  - else
+    h5 = link_to 'View Active Surveys', admin_surveys_path(state: 'active'), class: 'btn btn-primary'
+
+.list-group
+  - @surveys.each do |survey|
+    .list-group-item.d-flex.justify-content-between.align-items-center
+      .d-flex.flex-column
+        h3 = link_to survey.content, admin_survey_path(survey), class: 'text-decoration-none'
+        p.text-muted End Date: #{local_time(survey.end_date)}
+      = link_to admin_survey_path(survey), method: :delete, data: {:confirm => 'Are you sure?' } do
+        i.bi.bi-trash.icon-size.text-danger
