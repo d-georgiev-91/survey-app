@@ -1,7 +1,12 @@
 - if user_signed_in?
   nav.navbar.navbar-expand-lg.navbar-light.bg-light
     .container
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.me-auto
+          li.nav-item
+            = link_to 'Home', root_path, class: 'navbar-brand nav-link'
+          li.nav-item
+            = link_to 'Create new survey', new_admin_survey_path, class: 'nav-link'
 
       = form_with(url: destroy_user_session_path, method: :delete) do
         = submit_tag 'Logout', class: 'btn btn-primary'

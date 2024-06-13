@@ -1,0 +1,9 @@
+.nested-fields.mb-3
+  .form-group.row.align-items-center
+    = f.label :content, class: 'col-sm-2 col-form-label text-sm-end'
+    .col-sm-8
+      = f.text_field :content, class: 'form-control', required: true
+    .col-sm-2
+      = f.hidden_field :_destroy
+      = link_to_remove_association f do
+        i.bi.bi-trash.icon-size.text-danger

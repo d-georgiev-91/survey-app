@@ -9,6 +9,9 @@ AllCops:
     - db/schema.rb
     - bin/**/*
 
+Metrics/MethodLength:
+  Max: 50
+
 Metrics/BlockLength:
   Exclude:
     - db/schema.rb
