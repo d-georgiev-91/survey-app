@@ -1,0 +1,16 @@
+.row.justify-content-center.mt-4
+  .col-md-8
+    .card
+      .card-header
+        h2.text-center = @survey.content
+
+      = simple_form_for(@survey, url: survey_path(@survey), method: :patch) do |f|
+        fieldset.mb-3.card-body
+          - @survey.answers.each do |answer|
+            .form-check
+              - checked = @user_votes.include?(answer.id)
+              = radio_button_tag "answer", answer.id, checked, class: 'form-check-input', id: "answer_#{answer.id}"
+              = label_tag "answer_#{answer.id}", answer.content, class: 'form-check-label'
+
+        .card-footer.text-end
+          = f.submit 'Vote', class: 'btn btn-primary'

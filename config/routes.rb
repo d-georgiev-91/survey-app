@@ -9,7 +9,13 @@ Rails.application.routes.draw do
     root to: 'admin/surveys#index', as: :authenticated_admin_root
   end
 
-  resources :surveys, only: :index
+  authenticate :user, ->(u) { !u.admin? } do
+    resources :surveys, only: [:index, :edit, :update] do
+      member do
+        get :finished
+      end
+    end
+  end
 
   devise_for :users, controllers: { sessions: 'users/sessions' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
