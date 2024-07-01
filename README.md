@@ -1,24 +1,68 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Survey Application
 
-Things you may want to cover:
+This is a survey application built with Ruby on Rails, allowing users to vote on surveys created by administrators. Users can view results of finished surveys.
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+Before you start, make sure to have installed the required dependencies:
 
-* Configuration
+- Ruby 3.3.1 (using `rbenv` is recommended, details below)
+- Ruby Gems (see 'bundler' below)
+- MySQL Server 8.0.38
+- Redis 7.2.5
+- Node.js
+- npm
+- Yarn
 
-* Database creation
+**Note:** Installing Ruby using `rbenv` is covered [here](https://github.com/rbenv/rbenv#installation). There is also a multi-platform installer for `rbenv` (in [this GitHub project](https://github.com/rbenv/rbenv-installer)) which can be executed like this:
 
-* Database initialization
+```sh
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+```
 
-* How to run the test suite
+## Setting up
 
-* Services (job queues, cache servers, search engines, etc.)
+If this is **the first time** you are setting up the survey-app, you should:
 
-* Deployment instructions
+1. Get the [Survey app](https://github.com/d-georgiev-91/survey-app)
+   source code from GitHub:
+   ```sh
+   git clone git@github.com:d-georgiev-91/survey-app.git
+   cd survey-app
+   ```
 
-* ...
+1. Make sure the _Redis_ and the _Mysql_ servers are configured properly,
+   up and running.
+
+1. Run the automated setup script:
+
+   ```sh
+   ./bin/setup
+   ```
+
+## Running the survey-app
+
+### Running it locally
+
+You can follow the installation instructions to install [`hivemind`](https://github.com/DarthSim/hivemind?tab=readme-ov-file#installation)
+
+```sh
+hivemind Proc.dev
+```
+
+### Running it in a Docker container
+
+1. Checkout the `docker-instance` branch:
+
+   ```sh
+   git checkout docker-instance
+   ```
+
+1. Make sure you have Docker and Docker Compose installed on your machine. If not, you can follow the instructions [here](https://docs.docker.com/get-docker/) and [here](https://docs.docker.com/compose/install/) respectively.
+
+1. Build and run the Docker containers using Docker Compose:
+
+   ```sh
+   docker-compose up --build
+   ```
